@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2055305793433905148}
   - component: {fileID: 2055305793433905149}
   - component: {fileID: 2055305793433905095}
+  - component: {fileID: 6740012818178295528}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Untagged
@@ -46,8 +47,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!143 &2055305793433905148
 CharacterController:
   m_ObjectHideFlags: 0
@@ -59,13 +60,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
+  m_Height: 0.1
+  m_Radius: 0.1
   m_SlopeLimit: 0
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &2055305793433905149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +94,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef9d47bc8949e0b6ae481977369d6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6740012818178295528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055305793433905150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9090875c9a0f7685859cd919187a9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 0
+  m_value: 1
 --- !u!1 &6214407472123424808
 GameObject:
   m_ObjectHideFlags: 0

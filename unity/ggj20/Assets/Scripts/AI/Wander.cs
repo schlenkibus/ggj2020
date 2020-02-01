@@ -21,21 +21,6 @@ public class Wander : MonoBehaviour
 		StartCoroutine(NewHeading());
 	}
  
-    GameObject getClosestIsland() {
-        GameObject ret = null;
-        float minDist = 9999999f;
-        GameObject[] islands = GameObject.FindGameObjectsWithTag("Floor"); 
-        foreach (GameObject island in islands)
-        {
-            float currentDistance = Vector3.Distance(island.transform.position, transform.position);
-            if(currentDistance < minDist) {
-                minDist = currentDistance;
-                ret = island;
-            }
-        }
-        return ret;
-    }
-
 	void FixedUpdate ()
 	{
         if(!m_enabled)
@@ -80,7 +65,7 @@ public class Wander : MonoBehaviour
 		}
 	} 
 
-    private bool m_enabled = true;
+    private bool m_enabled = false;
 
     public void setEnabled(bool enabled)
     {
