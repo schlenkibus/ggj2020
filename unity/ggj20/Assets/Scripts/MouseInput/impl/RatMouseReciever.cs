@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleMouseFocusReceiver : MonoBehaviour, MouseFocusReceiver
+public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
 {
+
+    Wander m_wanderScript;
     void Start()
     {
-        
+        m_wanderScript = GetComponent<Wander>();
     }
 
+    // Update is called once per frame
     void Update()
     {
         
@@ -16,21 +19,22 @@ public class SimpleMouseFocusReceiver : MonoBehaviour, MouseFocusReceiver
 
     public void onMouseFocusGained()
     {
-        Debug.Log("Gained: " + gameObject.name);
+        m_wanderScript.setEnabled(false);
     }
 
     public void onMouseFocusLost()
     {
-        Debug.Log("Lost: " + gameObject.name);
+        m_wanderScript.setEnabled(true);
     }
 
     public void onClick()
     {
-        Debug.Log("Clicked: " + gameObject.name);
+
     }
 
     public void onDrag(Vector3 newMousePos)
     {
-        Debug.Log("Drag: " + newMousePos);
+        m_wanderScript.setEnabled(false);
+        transform.position = newMousePos;
     }
 }
