@@ -23,6 +23,9 @@ public class Wander : MonoBehaviour
  
 	void Update ()
 	{
+        if(!m_enabled)
+            return;
+
         RaycastHit hit;
 
         var forward = transform.TransformDirection(Vector3.forward);
@@ -52,10 +55,24 @@ public class Wander : MonoBehaviour
 	IEnumerator NewHeading ()
 	{
 		while (true) {
-			NewHeadingRoutine();
-			yield return new WaitForSeconds(directionChangeInterval);
+            if(m_enabled)
+			    NewHeadingRoutine();
+			
+            yield return new WaitForSeconds(directionChangeInterval);
 		}
 	} 
+
+    private bool m_enabled = true;
+
+    public void setEnabled(bool enabled)
+    {
+        m_enabled = enabled;
+    }
+
+    public void toggleEnable()
+    {
+        m_enabled = !m_enabled;
+    }
 
 	void NewHeadingRoutine ()
 	{
