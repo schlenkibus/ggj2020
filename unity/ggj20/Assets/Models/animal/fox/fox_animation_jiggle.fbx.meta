@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 0775c8e43dcf843dca7966d9605715af
+guid: edc6e2c1dd67c4bc9a20665f76f48032
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 8660886232211335811
+    second: fox_animation_jiggle
   externalObjects: {}
   materials:
     materialImportMode: 1
