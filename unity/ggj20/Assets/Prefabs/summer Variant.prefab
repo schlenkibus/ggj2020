@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235606998579268648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.18, y: 0, z: 3.14}
+  m_LocalPosition: {x: -7.18, y: 0, z: -0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1306374287860423274}
@@ -201,7 +201,7 @@ PrefabInstance:
     - target: {fileID: 5047499366031083721, guid: 037eee7bdb3635d169cd6a6a60c7896e,
         type: 3}
       propertyPath: m_Name
-      value: summer
+      value: summer Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5047499367147035962, guid: 037eee7bdb3635d169cd6a6a60c7896e,
         type: 3}
