@@ -1,21 +1,14 @@
 fileFormatVersion: 2
-guid: fb86e6edd47df47059afcf8924a230fe
+guid: 07d58a4b1d58b4df7bf1b2eca8b0bf55
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: grasBig_leave
-    second: {fileID: 2100000, guid: 37569802ebdfc4d439b1f8341d918e74, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: grasBig_root
-    second: {fileID: 2100000, guid: 64c86393138794c74a876205a368be6d, type: 2}
+      74: -135952331956449747
+    second: Main
+  externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
