@@ -35,6 +35,11 @@ public class MouseInput : MonoBehaviour
             }
         }
 
+        float scroll = Input.mouseScrollDelta.y;
+        if(scroll != 0) {
+            Camera.main.fieldOfView += scroll;
+        }
+
         bool isLeftClickDown = Input.GetMouseButton(0);
         bool inDrag = isLeftClickDown && m_mouseOver;
 
