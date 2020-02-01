@@ -12,16 +12,21 @@ public class Wander : MonoBehaviour
 	float heading;
 	Vector3 targetRotation;
  
+    Vector3 startPosition;
+
 	void Awake ()
 	{
 		controller = GetComponent<CharacterController>(); 
 		heading = Random.Range(0, 360);
 		transform.eulerAngles = new Vector3(0, heading, 0);
- 
+        startPosition = transform.position;
+
 		StartCoroutine(NewHeading());
 	}
  
-	void FixedUpdate ()
+    bool onBorder = false;
+
+	void Update ()
 	{
         if(!m_enabled)
             return;
@@ -37,22 +42,31 @@ public class Wander : MonoBehaviour
 
         transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime * directionChangeInterval);
 
-        if (Physics.Raycast(transform.position, directionFrontDown, out hit, 50.0f) && Physics.Raycast(transform.position, directionFrontDown, out hit2, 50.0f))
+        Vector3 fromPos = transform.position + transform.TransformDirection(Vector3.forward);
+
+        if (Physics.Raycast(fromPos, directionFrontDown, out hit, 50.0f) && Physics.Raycast(fromPos, directionFrontDown, out hit2, 50.0f))
         {
             if(hit.collider.tag == "Floor" && hit2.collider.tag == "Floor") {
                 forward = transform.TransformDirection(Vector3.forward);
                 controller.SimpleMove(forward * speed);
+                onBorder = false;
+                wasReset = false;
                 return;
             }
         }
 
-        //Turn 180° and calculate new angle to approach
-        transform.RotateAround(transform.position, transform.up, 180f);
-        heading -= 180;
-        if(heading < 0)
-            heading = 360 - heading;
+        if(!onBorder) {
+            transform.RotateAround(transform.position, transform.up, 180f);
+            heading -= 180;
+            if(heading < 0)
+                heading = 360 - heading;
 
-        NewHeadingRoutine();
+            NewHeadingRoutine();
+            onBorder = true;
+        }        
+
+        if(!wasReset)
+            controller.SimpleMove(Vector3.down * speed * 5);
 	}
  
 	IEnumerator NewHeading ()
@@ -66,6 +80,7 @@ public class Wander : MonoBehaviour
 	} 
 
     private bool m_enabled = false;
+    private bool wasReset = false;
 
     public void setEnabled(bool enabled)
     {
@@ -84,4 +99,12 @@ public class Wander : MonoBehaviour
 		heading = Random.Range(floor, ceil);
 		targetRotation = new Vector3(0, heading, 0);
 	}
+
+    public void resetPosition() {
+        transform.position = startPosition;
+        heading = 0;
+        targetRotation = new Vector3(0, 0, 0);
+        onBorder = false;
+        wasReset = true;
+    }
 }

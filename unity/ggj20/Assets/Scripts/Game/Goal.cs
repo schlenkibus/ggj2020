@@ -4,21 +4,58 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    List<Metric> m_goals;
-    // Start is called before the first frame update
+    public List<Metric> m_goals;
+    private Dictionary<MetricType, float> m_typeFactors;
 
-    public Goal(List<Metric> goals) {
+    public Goal() {
+        m_goals = new List<Metric>();
+    }
+
+    public Goal(List<Metric> goals, Dictionary<MetricType, float> factors) {
         m_goals = goals;
+        m_typeFactors = factors;
     }
 
-    void Start()
-    {
+    void Start() {
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+
+    }
+
+    public Dictionary<MetricType, float> calculatePercentage(List<Metric> metrics) {
+        Dictionary<MetricType, int> totalCount = new Dictionary<MetricType, int>();        
         
+        foreach(Metric metric in metrics) {
+            var type = metric.getMetricType();
+            var value = metric.getMetricValue();
+
+            if(totalCount.ContainsKey(type))
+                totalCount[type] += value;
+            else
+                totalCount.Add(type, value);
+        }
+
+        Dictionary<MetricType, float> ret = new Dictionary<MetricType, float>();
+
+        foreach(Metric goal in m_goals) {
+            var type = goal.getMetricType();
+            float factor = 0;
+            
+            if(m_typeFactors.ContainsKey(type))
+            {
+                factor = m_typeFactors[type];
+            }
+
+            if(totalCount.ContainsKey(type) && m_typeFactors.ContainsKey(type)) {
+                var totalEnitys = totalCount[type];
+                var percentage = totalEnitys * factor / goal.getMetricValue();
+                ret.Add(type, percentage);
+            }
+        }
+
+        return ret;
     }
 
     public bool meetsGoals(List<Metric> metrics) {
@@ -26,13 +63,18 @@ public class Goal : MonoBehaviour
         Dictionary<MetricType, int> currentValues = new Dictionary<MetricType, int>();        
         
         foreach(Metric metric in metrics) {
-            currentValues[metric.getMetricType()] += metric.getMetricValue();
+            if(currentValues.ContainsKey(metric.getMetricType()))
+                currentValues[metric.getMetricType()] += metric.getMetricValue();
+            else
+                currentValues.Add(metric.getMetricType(), metric.getMetricValue());
         }
 
         foreach(Metric goal in m_goals) {
-            var current = currentValues[goal.getMetricType()];
-            if(current < goal.getMetricValue())
-                return false;
+            if(currentValues.ContainsKey(goal.getMetricType())) {
+                var current = currentValues[goal.getMetricType()];
+                if(current < goal.getMetricValue())
+                    return false;
+            }
         }
 
         return true;

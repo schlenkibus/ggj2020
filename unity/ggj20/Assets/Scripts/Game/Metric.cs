@@ -4,22 +4,31 @@ using UnityEngine;
 
 [System.Serializable]
 public enum MetricType {
-    Rat
+    Rat,
+    Fox
 };
+
 public class Metric : MonoBehaviour
 {
 
     public MetricType m_type;
     public int m_value;
 
-    void Start()
-    {
-        
+    public Metric(MetricType type, int val) {
+        m_type = type;
+        m_value = val;
     }
 
-    void Update()
-    {
-        
+    public Metric() {
+
+    }
+
+    void Update() {
+
+    }
+
+    void Start() {
+
     }
 
     public MetricType getMetricType()
