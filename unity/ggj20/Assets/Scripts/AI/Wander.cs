@@ -21,7 +21,7 @@ public class Wander : MonoBehaviour
 		StartCoroutine(NewHeading());
 	}
  
-	void Update ()
+	void FixedUpdate ()
 	{
         if(!m_enabled)
             return;
@@ -46,8 +46,6 @@ public class Wander : MonoBehaviour
         heading -= 180;
         if(heading < 0)
             heading = 360 - heading;
-        else if(heading >= 360)
-            heading = heading - 360;
 
         targetRotation = new Vector3(0, heading, 0);
 	}

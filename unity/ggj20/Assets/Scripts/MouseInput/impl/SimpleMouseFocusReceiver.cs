@@ -28,4 +28,9 @@ public class SimpleMouseFocusReceiver : MonoBehaviour, MouseFocusReceiver
     {
         Debug.Log("Clicked: " + gameObject.name);
     }
+
+    public void onDrag(Vector3 newMousePos)
+    {
+        Debug.Log("Drag: " + newMousePos);
+    }
 }

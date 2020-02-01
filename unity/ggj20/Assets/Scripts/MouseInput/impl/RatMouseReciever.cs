@@ -29,8 +29,12 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
 
     public void onClick()
     {
-        m_wanderScript.toggleEnable();
+
     }
 
-
+    public void onDrag(Vector3 newMousePos)
+    {
+        m_wanderScript.setEnabled(false);
+        transform.position = newMousePos;
+    }
 }

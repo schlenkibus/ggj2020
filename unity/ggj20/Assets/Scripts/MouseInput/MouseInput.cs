@@ -35,6 +35,8 @@ public class MouseInput : MonoBehaviour
             }
         }
 
+        bool isLeftClickDown = Input.GetMouseButton(0);
+        bool inDrag = isLeftClickDown && m_mouseOver;
 
         if(hadPrevious && (focusOnNewObject || !found)) {
             MouseFocusReceiver receiver = oldObject.GetComponent<MouseFocusReceiver>();
@@ -51,6 +53,7 @@ public class MouseInput : MonoBehaviour
         } 
         
         if(m_mouseOver) {
+
             if(Input.GetMouseButtonDown(0))
             {
                 MouseFocusReceiver receiver = m_mouseOver.GetComponent<MouseFocusReceiver>();
@@ -58,12 +61,32 @@ public class MouseInput : MonoBehaviour
                     receiver.onClick();
                 }
             }
+
+            if(isLeftClickDown)
+            {
+                Vector3 directionTowardsCamera = DirectionTo(m_mouseOver.transform.position, Camera.main.transform.position);
+                Plane plane = new Plane(directionTowardsCamera, m_mouseOver.transform.position);
+
+                float dist;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (plane.Raycast(ray, out dist))
+                {
+                    Vector3 point = ray.GetPoint(dist);
+                    MouseFocusReceiver receiver = m_mouseOver.GetComponent<MouseFocusReceiver>();
+                    if(receiver != null) {
+                        receiver.onDrag(point);
+                    }
+                }
+            }
         }
 
-        if(!found) {
+        if(!found && !inDrag) {
             m_mouseOver = null;
         }
+    }
 
-
+    private Vector3 DirectionTo(Vector3 from, Vector3 to) {
+        Vector3 ret = to - from;
+        return ret.normalized;
     }
 }
