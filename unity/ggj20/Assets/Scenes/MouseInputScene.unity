@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 1685443423}
   - component: {fileID: 1685443422}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: WanderingSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -943,8 +943,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0026a4c2a248e32eca116a30997c002e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
-  directionChangeInterval: 1
+  speed: 2
+  directionChangeInterval: 2
   maxHeadingChange: 30
 --- !u!143 &1685443423
 CharacterController:
