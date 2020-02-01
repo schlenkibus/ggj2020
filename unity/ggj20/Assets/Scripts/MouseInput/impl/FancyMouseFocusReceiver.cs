@@ -19,12 +19,19 @@ public class FancyMouseFocusReceiver : MonoBehaviour, MouseFocusReceiver
 
     public void onMouseFocusGained()
     {
-        setState(true);
+        setState(m_state);
     }
 
     public void onMouseFocusLost()
     {
-        setState(false);
+        setState(!m_state);
+    }
+
+    private bool m_state = false;
+    public void onClick()
+    {
+        m_state = !m_state;
+        setState(m_state);
     }
 
     private void setState(bool state)

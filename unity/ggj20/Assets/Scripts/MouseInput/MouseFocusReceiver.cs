@@ -7,4 +7,6 @@ public interface MouseFocusReceiver
 {
     void onMouseFocusGained();
     void onMouseFocusLost();
+    void onClick();
+
 }

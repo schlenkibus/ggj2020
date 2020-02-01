@@ -23,4 +23,9 @@ public class SimpleMouseFocusReceiver : MonoBehaviour, MouseFocusReceiver
     {
         Debug.Log("Lost: " + gameObject.name);
     }
+
+    public void onClick()
+    {
+        Debug.Log("Clicked: " + gameObject.name);
+    }
 }

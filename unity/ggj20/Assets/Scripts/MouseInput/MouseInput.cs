@@ -50,6 +50,16 @@ public class MouseInput : MonoBehaviour
             }
         } 
         
+        if(m_mouseOver) {
+            if(Input.GetMouseButtonDown(0))
+            {
+                MouseFocusReceiver receiver = m_mouseOver.GetComponent<MouseFocusReceiver>();
+                if(receiver != null) {
+                    receiver.onClick();
+                }
+            }
+        }
+
         if(!found) {
             m_mouseOver = null;
         }
