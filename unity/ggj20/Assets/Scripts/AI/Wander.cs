@@ -40,7 +40,13 @@ public class Wander : MonoBehaviour
         }
 
         transform.RotateAround(transform.position, transform.up, 180f);
-        NewHeadingRoutine();
+        heading -= 180;
+        if(heading < 0)
+            heading = 360 - heading;
+        else if(heading >= 360)
+            heading = heading - 360;
+
+        targetRotation = new Vector3(0, heading, 0);
 	}
  
 	IEnumerator NewHeading ()
@@ -58,14 +64,4 @@ public class Wander : MonoBehaviour
 		heading = Random.Range(floor, ceil);
 		targetRotation = new Vector3(0, heading, 0);
 	}
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        
-        var forward = transform.TransformDirection(Vector3.forward);
-        var down = transform.TransformDirection(Vector3.down);
-        Vector3 direction = forward + down;
-        Gizmos.DrawLine(transform.position, direction);
-    }
 }
