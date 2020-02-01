@@ -9,12 +9,26 @@ public class SpawnerObject : MonoBehaviour
 
     void Start()
     {
-        for(var i = 0; i < m_count; i++) {
-            Vector3 pos = transform.position;
-            pos.x += i * 5;
-            Instantiate(m_prefab, transform.position, Quaternion.identity);
-        }
+        StartCoroutine(SpawnEntity());
     }
+
+    Vector3 getRandomPositionInRange(Vector3 pos, float distance) 
+    {
+        float x = Random.Range(pos.x - distance, pos.x + distance);
+        float z = Random.Range(pos.z - distance, pos.z + distance);
+        pos.x = x;
+        pos.z = z;
+        return pos;
+    }
+
+    IEnumerator SpawnEntity ()
+	{
+		while (m_count > 0) {
+            Instantiate(m_prefab, getRandomPositionInRange(transform.position, 2), Quaternion.identity);    
+            m_count--;
+            yield return new WaitForSeconds(0.5f);
+		}
+	} 
 
     void Update()
     {

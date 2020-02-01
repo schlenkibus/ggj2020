@@ -24,7 +24,7 @@ public class Goal : MonoBehaviour
 
     }
 
-    public Dictionary<MetricType, float> calculatePercentage(List<Metric> metrics) {
+    public float calculatePercentage(List<Metric> metrics) {
         Dictionary<MetricType, int> totalCount = new Dictionary<MetricType, int>();        
         
         foreach(Metric metric in metrics) {
@@ -37,7 +37,7 @@ public class Goal : MonoBehaviour
                 totalCount.Add(type, value);
         }
 
-        Dictionary<MetricType, float> ret = new Dictionary<MetricType, float>();
+        float totalPercentage = 0;
 
         foreach(Metric goal in m_goals) {
             var type = goal.getMetricType();
@@ -51,11 +51,11 @@ public class Goal : MonoBehaviour
             if(totalCount.ContainsKey(type) && m_typeFactors.ContainsKey(type)) {
                 var totalEnitys = totalCount[type];
                 var percentage = totalEnitys * factor / goal.getMetricValue();
-                ret.Add(type, percentage);
+                totalPercentage += percentage;
             }
         }
 
-        return ret;
+        return totalPercentage / m_goals.Count;
     }
 
     public bool meetsGoals(List<Metric> metrics) {
