@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 690b2c49105daf09cb6ceb5873fc137a
+guid: 58420eb436eb5fb169f6ab8c2ee2ce5a
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -6366584519489502640
+    second: rat_animation_walk
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -36,7 +39,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 100
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1

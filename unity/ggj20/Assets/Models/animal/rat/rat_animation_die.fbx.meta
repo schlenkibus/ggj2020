@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: -5473952684127975431
     second: rat_animation_die
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rat_body
+    second: {fileID: 2100000, guid: 1e9f1343f4db140e2a95067c21b3a1c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rat_eyes
+    second: {fileID: 2100000, guid: 3a3285d2318f44bfc986e6a6bc1dcc5e, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
