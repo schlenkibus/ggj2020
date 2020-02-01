@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Autodesk_Cache_File>
+  <cacheType Type="OneFile" Format="mcc"/>
+  <time Range="7750-15000"/>
+  <cacheTimePerFrame TimePerFrame="250"/>
+  <cacheVersion Version="2.0"/>
+  <Channels>
+    <channel0 ChannelName="rat_animation" ChannelType="DoubleVectorArray" ChannelInterpretation="Points" SamplingType="Regular" SamplingRate="250" StartTime="7750" EndTime="15000"/>
+  </Channels>
+</Autodesk_Cache_File>
