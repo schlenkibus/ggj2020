@@ -48,4 +48,9 @@ public class FancyMouseFocusReceiver : MonoBehaviour, MouseFocusReceiver
     private Renderer GetRenderer() {
         return GetComponent<Renderer>();
     }
+
+    public void onDrag(Vector3 newMousePos)
+    {
+        Debug.Log("Drag: " + newMousePos);
+    }
 }
