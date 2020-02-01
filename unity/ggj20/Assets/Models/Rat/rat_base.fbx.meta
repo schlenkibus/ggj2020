@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 9efaf7d48f5c902e3919e20e1a9bc5b2
+guid: 89324bed691a2531ead28654d40d1353
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -5308227764167481651
+    second: jiggle
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -36,7 +39,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 100
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
@@ -68,7 +71,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
