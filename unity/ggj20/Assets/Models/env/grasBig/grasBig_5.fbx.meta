@@ -3,7 +3,12 @@ guid: 17ad00e0da1154c8c88003758804d64b
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grasBig_leave
+    second: {fileID: 2100000, guid: 37569802ebdfc4d439b1f8341d918e74, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
