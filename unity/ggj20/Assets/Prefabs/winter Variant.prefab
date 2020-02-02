@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159ae5ed477f853ff8ecdd922fbedcf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_prefab: {fileID: 2055305793433905150, guid: e1fe549c145195e5ca2caa6e604bbaf2,
+  m_prefab: {fileID: 2055305793433905150, guid: e77026ac28797c653b901a6ef7ab51f5,
     type: 3}
-  m_count: 10
+  m_count: 4
 --- !u!1 &743203100307700648
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ PrefabInstance:
     - target: {fileID: 5047499365158048815, guid: 037eee7bdb3635d169cd6a6a60c7896e,
         type: 3}
       propertyPath: m_count
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5047499366031083720, guid: 037eee7bdb3635d169cd6a6a60c7896e,
         type: 3}

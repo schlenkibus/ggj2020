@@ -1,22 +1,12 @@
 fileFormatVersion: 2
-guid: f2112a94c82af43ffb39ec3e6feaa2f6
+guid: 7ee9242981d163b1a93fe1c82b1c3cbb
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: -6366584519489502640
-    second: rat_animation_walk
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rat_body
-    second: {fileID: 2100000, guid: 1e9f1343f4db140e2a95067c21b3a1c3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rat_eyes
-    second: {fileID: 2100000, guid: 3a3285d2318f44bfc986e6a6bc1dcc5e, type: 2}
+      74: 8749543375825739982
+    second: penguin_animation_walk
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -47,9 +37,9 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1

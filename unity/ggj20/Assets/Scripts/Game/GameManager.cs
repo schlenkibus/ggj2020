@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
         goals.Add(new Metric(MetricType.Rat, 10));
         goals.Add(new Metric(MetricType.Fox, 10));
         
-        factors.Add(MetricType.Rat, 10f);
-        factors.Add(MetricType.Fox, 10f);
+        factors.Add(MetricType.Rat, 1);
+        factors.Add(MetricType.Fox, 1);
         
         winterIsland.m_goal = new Goal(goals, factors);
     }

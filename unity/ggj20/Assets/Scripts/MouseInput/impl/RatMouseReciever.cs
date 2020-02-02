@@ -7,9 +7,13 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
 
     Wander m_wanderScript;
     GameObject m_currentIsland;
+
+    Animator m_animator;
+
     void Start()
     {
         m_wanderScript = GetComponent<Wander>();
+        m_animator = GetComponentInChildren<Animator>();
         updateIslandRelationship();
     }
 
@@ -41,6 +45,7 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
     public void onMouseFocusLost()
     {
         m_wanderScript.setEnabled(true);
+        m_animator.SetBool("inDrag", false);
         updateIslandRelationship();
     }
 
@@ -64,6 +69,7 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
 
     public void onDrag(Vector3 newMousePos)
     {
+        m_animator.SetBool("inDrag", true);
         m_wanderScript.setEnabled(false);
         transform.position = newMousePos;
     }
