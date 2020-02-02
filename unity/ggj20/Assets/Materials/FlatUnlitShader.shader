@@ -39,7 +39,13 @@
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.worldPos = v.vertex.xyz;//mul(unity_ObjectToWorld, v.vertex).xyz;
+                // Directly passing model vertex pos
+                //o.worldPos = v.vertex.xyz;
+                
+                // Passing transformed vertex
+                o.worldPos =mul(unity_ObjectToWorld, v.vertex).xyz;
+
+
                 return o;
             }
 
@@ -47,8 +53,8 @@
             {
                 static const float3 pointLight = float3(10, 10, -10);
                 const float3 lightDir = normalize(pointLight - i.vertex);
-                const float3 flatNormal = normalize(cross(ddx(i.worldPos), -ddy(i.worldPos)));
-                const float lightIntensity = pow((1.2 - 0.8 * dot(flatNormal, lightDir)) * 0.5, 2.0);
+                const float3 flatNormal = -normalize(cross(ddx(i.worldPos), -ddy(i.worldPos)));
+                const float lightIntensity = pow((1.5 + 0.5 * dot(flatNormal, lightDir)) * 0.5, 2.0);
                 
                 float4 col = float4(lightIntensity.xxx * _DiffuseColor.xyz, 1.0);
                 
