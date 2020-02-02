@@ -38,7 +38,6 @@ public class Goal : MonoBehaviour
         }
 
         float totalPercentage = 0;
-        int goalsWithZero = 0;
 
         foreach(Metric goal in m_goals) {
             var type = goal.getMetricType();

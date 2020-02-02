@@ -9,9 +9,11 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
     GameObject m_currentIsland;
 
     Animator m_animator;
+    AudioSource m_dragSound;
 
     void Start()
     {
+        m_dragSound = GetComponent<AudioSource>();
         m_wanderScript = GetComponent<Wander>();
         m_animator = GetComponentInChildren<Animator>();
         updateIslandRelationship();
@@ -67,8 +69,13 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
 
     }
 
-    public void onDrag(Vector3 newMousePos)
+    public void onDrag(Vector3 newMousePos, bool isDragStart)
     {
+        if(isDragStart) {   
+            if(!m_dragSound.isPlaying)
+                m_dragSound.Play();
+        }
+     
         m_animator.SetBool("inDrag", true);
         m_wanderScript.setEnabled(false);
         transform.position = newMousePos;

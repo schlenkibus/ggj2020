@@ -18,7 +18,6 @@ public class WanderResetter : MonoBehaviour
     {
         Wander w = other.gameObject.GetComponent<Wander>();
         if(w != null) {
-            Debug.Log("Reset Wanderer!");
             w.resetPosition();
         } 
     }

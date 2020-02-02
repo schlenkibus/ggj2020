@@ -25,7 +25,7 @@ public class RotateIslandMouseReceiver : MonoBehaviour, MouseFocusReceiver
         m_targetIsland.transform.RotateAround(m_targetIsland.transform.position, m_targetIsland.transform.up, m_rotationDirection);
     }
 
-    public void onDrag(Vector3 newMousePos) {
+    public void onDrag(Vector3 newMousePos, bool s) {
 
     }
 
