@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public IslandController island1;
-    public IslandController island2;
+    public IslandController summerIsland;
+    public IslandController winterIsland;
     void Start()
     {
         createGoals();
-        island1.setGameManager(this);
-        island2.setGameManager(this);
+        summerIsland.setGameManager(this);
+        winterIsland.setGameManager(this);
     }
 
     void Update()
@@ -27,25 +27,25 @@ public class GameManager : MonoBehaviour
         Dictionary<MetricType, float> factors = new Dictionary<MetricType, float>();
         List<Metric> goals = new List<Metric>();
         
-        goals.Add(new Metric(MetricType.Rat, 8));
-        goals.Add(new Metric(MetricType.Fox, 3));
+        goals.Add(new Metric(MetricType.Rat, 10));
+        goals.Add(new Metric(MetricType.Fox, 2));
         
-        factors.Add(MetricType.Rat, 0.5f);
-        factors.Add(MetricType.Fox, 0.5f);
+        factors.Add(MetricType.Rat, 1f);
+        factors.Add(MetricType.Fox, 1f);
         
-        island1.m_goal = new Goal(goals, factors);
+        summerIsland.m_goal = new Goal(goals, factors);
     }
 
     void setupWorld2() {
         Dictionary<MetricType, float> factors = new Dictionary<MetricType, float>();
         List<Metric> goals = new List<Metric>();
 
-        goals.Add(new Metric(MetricType.Rat, 2));
-        goals.Add(new Metric(MetricType.Fox, 7));
+        goals.Add(new Metric(MetricType.Rat, 10));
+        goals.Add(new Metric(MetricType.Fox, 10));
         
-        factors.Add(MetricType.Rat, 0.5f);
-        factors.Add(MetricType.Fox, 0.5f);
+        factors.Add(MetricType.Rat, 10f);
+        factors.Add(MetricType.Fox, 10f);
         
-        island2.m_goal = new Goal(goals, factors);
+        winterIsland.m_goal = new Goal(goals, factors);
     }
 }
