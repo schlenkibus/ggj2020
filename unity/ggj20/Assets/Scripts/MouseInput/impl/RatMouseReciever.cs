@@ -44,6 +44,7 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
         if(!m_dragSound.isPlaying)
                 m_dragSound.Play();
      
+        m_animator.SetBool("inDrag", true);
         m_wanderScript.setEnabled(false);
     }
 
