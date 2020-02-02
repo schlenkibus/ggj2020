@@ -40,11 +40,11 @@ public class GameManager : MonoBehaviour
         Dictionary<MetricType, float> factors = new Dictionary<MetricType, float>();
         List<Metric> goals = new List<Metric>();
 
-        goals.Add(new Metric(MetricType.Rat, 2));
+        goals.Add(new Metric(MetricType.Rat, 10));
         goals.Add(new Metric(MetricType.Fox, 10));
         
-        factors.Add(MetricType.Rat, 1f);
-        factors.Add(MetricType.Fox, 1f);
+        factors.Add(MetricType.Rat, 10f);
+        factors.Add(MetricType.Fox, 10f);
         
         winterIsland.m_goal = new Goal(goals, factors);
     }

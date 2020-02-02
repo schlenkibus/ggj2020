@@ -24,7 +24,7 @@ public class SpawnerObject : MonoBehaviour
     IEnumerator SpawnEntity ()
 	{
 		while (m_count > 0) {
-            Instantiate(m_prefab, getRandomPositionInRange(transform.position, 2), Quaternion.identity);    
+            Instantiate(m_prefab, getRandomPositionInRange(transform.position, 0.8f), Quaternion.identity);    
             m_count--;
             yield return new WaitForSeconds(0.5f);
 		}

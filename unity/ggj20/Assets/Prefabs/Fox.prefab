@@ -62,7 +62,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 0.1
   m_Radius: 0.27
-  m_SlopeLimit: 0
+  m_SlopeLimit: 180
   m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -147,7 +147,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6214407472123424808}
-  m_Mesh: {fileID: -8926791103327023576, guid: 54ce0734e78eec17397d032335a4d832, type: 3}
+  m_Mesh: {fileID: 8109508240073063065, guid: edc6e2c1dd67c4bc9a20665f76f48032, type: 3}
 --- !u!23 &712678639565975373
 MeshRenderer:
   m_ObjectHideFlags: 0
