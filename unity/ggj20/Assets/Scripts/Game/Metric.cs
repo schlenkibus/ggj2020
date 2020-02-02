@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public enum MetricType {
     Rat,
-    Fox
+    Fox,
+    Penguin
 };
 
 public class Metric : MonoBehaviour

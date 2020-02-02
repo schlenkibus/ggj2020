@@ -13,8 +13,7 @@ public class IslandController : MonoBehaviour
 
     void Start()
     {
-        m_goal = new Goal();
-        m_currentIslandEntitys = new HashSet<GameObject>();
+           m_currentIslandEntitys = new HashSet<GameObject>();
     }
 
     public void setGameManager(GameManager mng) {
