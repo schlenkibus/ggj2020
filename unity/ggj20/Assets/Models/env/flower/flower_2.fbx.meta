@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e4dcdbf3bdb449d18d8c1f6d887e79f
+guid: 38695c214991046dda4a67c0dbe7f21a
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
@@ -7,12 +7,22 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: tree_leaf
+      name: Material_1
+    second: {fileID: 2100000, guid: 64c86393138794c74a876205a368be6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flower_flower
+    second: {fileID: 2100000, guid: f35d21b67874e46e9b90e80cdb064153, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flower_leaf
     second: {fileID: 2100000, guid: 37569802ebdfc4d439b1f8341d918e74, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: tree_trunk
+      name: flower_root
     second: {fileID: 2100000, guid: 64c86393138794c74a876205a368be6d, type: 2}
   materials:
     materialImportMode: 1
@@ -44,7 +54,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 60
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.59999996
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

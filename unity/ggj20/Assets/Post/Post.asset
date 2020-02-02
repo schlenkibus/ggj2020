@@ -21,10 +21,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.05
+    value: 0.185
   size:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 1.11
   lumContrib:
     overrideState: 0
     value: 0.8
@@ -64,12 +64,12 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.5
+    value: 2.73
   threshold:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.98
   softKnee:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   clamp:
     overrideState: 0
@@ -84,8 +84,8 @@ MonoBehaviour:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   dirtTexture:
     overrideState: 0
     value: {fileID: 0}
@@ -105,19 +105,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
   m_Name: AutoExposure
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 0
   filtering:
-    overrideState: 0
-    value: {x: 50, y: 95}
+    overrideState: 1
+    value: {x: 59.273575, y: 99}
   minLuminance:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -2.1
   maxLuminance:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1.7
   keyValue:
     overrideState: 0
     value: 1
@@ -151,7 +151,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 0.39
+    value: 1.94
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -174,10 +174,10 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   radius:
-    overrideState: 0
+    overrideState: 1
     value: 0.25
   quality:
-    overrideState: 0
+    overrideState: 1
     value: 2
 --- !u!114 &8564635015593310962
 MonoBehaviour:
