@@ -41,7 +41,6 @@ public class IslandController : MonoBehaviour
     private void evaluate() {
         var metrics = collectMetrics();
         var result = m_goal.calculatePercentage(metrics);
-        Debug.Log(gameObject.name + "Island Result: " + result + "%");
         m_percentageIndication.transform.localScale = new Vector3(result, 1, 1);
     }
 

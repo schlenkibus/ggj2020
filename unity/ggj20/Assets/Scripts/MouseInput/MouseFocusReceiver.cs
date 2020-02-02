@@ -9,5 +9,5 @@ public interface MouseFocusReceiver
     void onMouseFocusLost();
     void onClick();
 
-    void onDrag(Vector3 newMousePos);
+    void onDrag(Vector3 newMousePos, bool isDragStart);
 }

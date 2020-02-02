@@ -79,7 +79,7 @@ public class MouseInput : MonoBehaviour
                     Vector3 point = ray.GetPoint(dist);
                     MouseFocusReceiver receiver = m_mouseOver.GetComponent<MouseFocusReceiver>();
                     if(receiver != null) {
-                        receiver.onDrag(point);
+                        receiver.onDrag(point, focusOnNewObject);
                     }
                 }
             }
