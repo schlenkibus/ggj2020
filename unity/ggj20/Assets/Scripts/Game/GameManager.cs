@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour
         Dictionary<MetricType, float> factors = new Dictionary<MetricType, float>();
         List<Metric> goals = new List<Metric>();
         
-        goals.Add(new Metric(MetricType.Rat, 8));
+        goals.Add(new Metric(MetricType.Rat, 2));
         goals.Add(new Metric(MetricType.Fox, 3));
-        goals.Add(new Metric(MetricType.Penguin, 1));
+        goals.Add(new Metric(MetricType.Penguin, 3));
         
         factors.Add(MetricType.Rat, 1f);
         factors.Add(MetricType.Fox, 1f);
@@ -42,9 +42,9 @@ public class GameManager : MonoBehaviour
         Dictionary<MetricType, float> factors = new Dictionary<MetricType, float>();
         List<Metric> goals = new List<Metric>();
 
-        goals.Add(new Metric(MetricType.Rat, 2));
-        goals.Add(new Metric(MetricType.Fox, 7));
-        goals.Add(new Metric(MetricType.Penguin, 9));
+        goals.Add(new Metric(MetricType.Rat, 5));
+        goals.Add(new Metric(MetricType.Fox, 5));
+        goals.Add(new Metric(MetricType.Penguin, 5));
         
         factors.Add(MetricType.Rat, 1f);
         factors.Add(MetricType.Fox, 1f);
