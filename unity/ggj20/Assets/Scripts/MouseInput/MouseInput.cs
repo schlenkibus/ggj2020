@@ -10,32 +10,37 @@ public class MouseInput : MonoBehaviour
     {
     }
 
+    bool m_leftWasDown = false;
+
     void Update()
     {
-        bool found = false;
+        bool isLeftClickDown = Input.GetMouseButton(0);
+        bool stillInDrag = m_leftWasDown && isLeftClickDown && m_mouseOver != null;
         bool hadPrevious = m_mouseOver != null;
+        bool found = false;
         bool focusOnNewObject = false;
         GameObject oldObject = m_mouseOver;
 
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200.0f))
-        {
-            MouseFocusReceiver receiver = hit.collider.gameObject.GetComponent<MouseFocusReceiver>();
-            if (receiver != null)
+        if(!stillInDrag) {
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200.0f))
             {
-                found = true;
-                GameObject selection = hit.collider.gameObject;
-                
-                focusOnNewObject = selection != oldObject;
-
-                if(focusOnNewObject)
+                MouseFocusReceiver receiver = hit.collider.gameObject.GetComponent<MouseFocusReceiver>();
+                if (receiver != null)
                 {
-                    m_mouseOver = selection;
+                    found = true;
+                    GameObject selection = hit.collider.gameObject;
+                    
+                    focusOnNewObject = selection != oldObject;
+
+                    if(focusOnNewObject)
+                    {
+                        m_mouseOver = selection;
+                    }
                 }
             }
         }
 
-        bool isLeftClickDown = Input.GetMouseButton(0);
         bool inDrag = isLeftClickDown && m_mouseOver;
 
         if(hadPrevious && (focusOnNewObject || !found)) {
@@ -83,6 +88,8 @@ public class MouseInput : MonoBehaviour
         if(!found && !inDrag) {
             m_mouseOver = null;
         }
+
+        m_leftWasDown = isLeftClickDown;
     }
 
     private Vector3 DirectionTo(Vector3 from, Vector3 to) {
