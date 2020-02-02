@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -7021035845822985315
     second: penguin_animation_jiggle
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: penguin_body
+    second: {fileID: 2100000, guid: 3e06a3d167ba12044a64210223e348d1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -83,7 +88,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 100
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
