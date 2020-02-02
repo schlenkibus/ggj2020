@@ -79,7 +79,7 @@ public class Wander : MonoBehaviour
 		}
 	} 
 
-    private bool m_enabled = false;
+    private bool m_enabled = true;
     private bool wasReset = false;
 
     public void setEnabled(bool enabled)
