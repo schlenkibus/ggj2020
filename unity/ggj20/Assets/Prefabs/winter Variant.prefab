@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 2055305793433905150, guid: e77026ac28797c653b901a6ef7ab51f5,
     type: 3}
-  m_count: 4
+  m_count: 5
 --- !u!1 &743203100307700648
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ Transform:
   - {fileID: 753823057062443486}
   - {fileID: 1498551428205030501}
   m_Father: {fileID: 3535093318314797721}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2594590862911786113
 MonoBehaviour:
@@ -1263,6 +1263,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 13.502001
       objectReference: {fileID: 0}
+    - target: {fileID: 2083095528689033561, guid: 037eee7bdb3635d169cd6a6a60c7896e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3831926631746602075, guid: 037eee7bdb3635d169cd6a6a60c7896e,
         type: 3}
       propertyPath: m_Name
@@ -1281,7 +1286,7 @@ PrefabInstance:
     - target: {fileID: 5047499365158048815, guid: 037eee7bdb3635d169cd6a6a60c7896e,
         type: 3}
       propertyPath: m_count
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5047499366031083720, guid: 037eee7bdb3635d169cd6a6a60c7896e,
         type: 3}

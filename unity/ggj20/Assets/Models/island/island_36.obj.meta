@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-guid: 920c9c5ebd4bb5456b2eaa0c269d1293
+guid: 5b5181d70e11503cfb5932d9e131c9b3
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      74: -7021035845822985315
-    second: penguin_animation_jiggle
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -37,9 +34,9 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
