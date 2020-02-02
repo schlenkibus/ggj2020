@@ -52,6 +52,9 @@ public class Goal : MonoBehaviour
                 var totalEnitys = totalCount[type];
                 if(goal.getMetricValue() != 0) {
                     var percentage = totalEnitys * factor / goal.getMetricValue();
+                    if(percentage >= 1.0f)
+                        percentage = 1.0f;
+
                     totalPercentage += percentage;
                 }
             }
