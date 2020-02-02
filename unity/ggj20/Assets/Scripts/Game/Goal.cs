@@ -38,6 +38,7 @@ public class Goal : MonoBehaviour
         }
 
         float totalPercentage = 0;
+        int goalsWithZero = 0;
 
         foreach(Metric goal in m_goals) {
             var type = goal.getMetricType();
@@ -52,14 +53,15 @@ public class Goal : MonoBehaviour
                 var totalEnitys = totalCount[type];
                 if(goal.getMetricValue() != 0) {
                     var percentage = totalEnitys * factor / goal.getMetricValue();
-                    if(percentage >= 1.0f)
-                        percentage = 1.0f;
                     totalPercentage += percentage;
                 }
             }
         }
 
         Debug.Log("totalPercentage: " + totalPercentage + " m_goals.Count: " + m_goals.Count);
+
+        if(totalPercentage >= 1.0f * m_goals.Count)
+            totalPercentage = 1.0f * m_goals.Count;
 
         return totalPercentage / m_goals.Count;
     }
