@@ -39,12 +39,15 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
         
     }
 
-    public void onMouseFocusGained()
+    public void onDragStart()
     {
+        if(!m_dragSound.isPlaying)
+                m_dragSound.Play();
+     
         m_wanderScript.setEnabled(false);
     }
 
-    public void onMouseFocusLost()
+    public void onDragEnd()
     {
         m_wanderScript.setEnabled(true);
         m_animator.SetBool("inDrag", false);
@@ -64,20 +67,8 @@ public class RatMouseReciever : MonoBehaviour, MouseFocusReceiver
         }
     }
 
-    public void onClick()
+    public void onDrag(Vector3 newMousePos)
     {
-
-    }
-
-    public void onDrag(Vector3 newMousePos, bool isDragStart)
-    {
-        if(isDragStart) {   
-            if(!m_dragSound.isPlaying)
-                m_dragSound.Play();
-        }
-     
-        m_animator.SetBool("inDrag", true);
-        m_wanderScript.setEnabled(false);
-        transform.position = newMousePos;
+       transform.position = newMousePos;
     }
 }
