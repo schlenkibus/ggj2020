@@ -48,12 +48,16 @@ public class Goal : MonoBehaviour
                 factor = m_typeFactors[type];
             }
 
-            if(totalCount.ContainsKey(type) && m_typeFactors.ContainsKey(type)) {
+            if(totalCount.ContainsKey(type)) {
                 var totalEnitys = totalCount[type];
-                var percentage = totalEnitys * factor / goal.getMetricValue();
-                totalPercentage += percentage;
+                if(goal.getMetricValue() != 0) {
+                    var percentage = totalEnitys * factor / goal.getMetricValue();
+                    totalPercentage += percentage;
+                }
             }
         }
+
+        Debug.Log("totalPercentage: " + totalPercentage + " m_goals.Count: " + m_goals.Count);
 
         return totalPercentage / m_goals.Count;
     }
