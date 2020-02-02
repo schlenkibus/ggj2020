@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0026a4c2a248e32eca116a30997c002e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   directionChangeInterval: 1
   maxHeadingChange: 180
 --- !u!114 &2055305793433905095

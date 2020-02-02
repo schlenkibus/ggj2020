@@ -12,7 +12,7 @@ public class MouseInput : MonoBehaviour
 
     bool m_leftWasDown = false;
 
-    void Update()
+    void FixedUpdate()
     {
         bool isLeftClickDown = Input.GetMouseButton(0);
         bool stillInDrag = m_leftWasDown && isLeftClickDown && m_mouseOver != null;
