@@ -6,6 +6,15 @@ public class GameManager : MonoBehaviour
 {
     public IslandController summerIsland;
     public IslandController winterIsland;
+
+    public int FoxSummerCount = 5;
+    public int RatSummerCount = 9;
+    public int PenguinSummerCount = 2;
+
+    public int FoxWinterCount = 6;
+    public int RatWinterCount = 2;
+    public int PenguinWinterCount = 12;
+
     void Start()
     {
         createGoals();
@@ -29,9 +38,9 @@ public class GameManager : MonoBehaviour
         Dictionary<MetricType, float> factors = new Dictionary<MetricType, float>();
         List<Metric> goals = new List<Metric>();
         
-        goals.Add(new Metric(MetricType.Rat, 9));
-        goals.Add(new Metric(MetricType.Fox, 5));
-        goals.Add(new Metric(MetricType.Penguin, 2));
+        goals.Add(new Metric(MetricType.Rat, RatSummerCount));
+        goals.Add(new Metric(MetricType.Fox, FoxSummerCount));
+        goals.Add(new Metric(MetricType.Penguin, PenguinSummerCount));
         
         factors.Add(MetricType.Rat, 1f);
         factors.Add(MetricType.Fox, 1f);
@@ -46,9 +55,9 @@ public class GameManager : MonoBehaviour
         Dictionary<MetricType, float> factors = new Dictionary<MetricType, float>();
         List<Metric> goals = new List<Metric>();
 
-        goals.Add(new Metric(MetricType.Rat, 2));
-        goals.Add(new Metric(MetricType.Fox, 6));
-        goals.Add(new Metric(MetricType.Penguin, 12));
+        goals.Add(new Metric(MetricType.Rat, RatWinterCount));
+        goals.Add(new Metric(MetricType.Fox, FoxWinterCount));
+        goals.Add(new Metric(MetricType.Penguin, PenguinWinterCount));
         
         factors.Add(MetricType.Rat, 1f);
         factors.Add(MetricType.Fox, 1f);

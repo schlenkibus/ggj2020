@@ -152,6 +152,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summerIsland: {fileID: 2025438683}
   winterIsland: {fileID: 1199414615}
+  FoxSummerCount: 5
+  RatSummerCount: 2
+  PenguinSummerCount: 12
+  FoxWinterCount: 10
+  RatWinterCount: 12
+  PenguinWinterCount: 3
 --- !u!4 &279582750
 Transform:
   m_ObjectHideFlags: 0
